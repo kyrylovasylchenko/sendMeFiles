@@ -18,13 +18,12 @@ public class UpdateController {
     private TelegramBot telegramBot;
     private final MessageUtils messageUtils;
     private final UpdateProducer updateProducer;
-    private final AnswerConsumer answerConsumer;
+
 
     @Autowired
-    public UpdateController(MessageUtils messageUtils, UpdateProducer updateProducer, AnswerConsumer answerConsumer) {
+    public UpdateController(MessageUtils messageUtils, UpdateProducer updateProducer) {
         this.messageUtils = messageUtils;
         this.updateProducer = updateProducer;
-        this.answerConsumer = answerConsumer;
     }
 
     public void registerBot(TelegramBot telegramBot){
@@ -52,7 +51,7 @@ public class UpdateController {
         }
     }
 
-    private void setView(SendMessage sendMessage) {
+    public void setView(SendMessage sendMessage) {
         telegramBot.sendAnswerMessage(sendMessage);
     }
 

@@ -4,21 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de5271c0-40c6-4829-b931-3507a1827cb5" name="Changes" comment="Bot template">
-      <change afterPath="$PROJECT_DIR$/common-rabbitmq/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-rabbitmq/src/main/java/ua/kyva/model/RabbitQueue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/controller/UpdateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/service/AnswerConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/service/UpdateProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/service/impl/AnswerConsumerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/service/impl/UpdateProducerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/utils/MessageUtils.java" afterDir="false" />
+    <list default="true" id="de5271c0-40c6-4829-b931-3507a1827cb5" name="Changes" comment="Init service + controller update">
+      <change afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/confuguration/RabbitConfiguration.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/dispatcher/src/main/resources/application.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/dispatcher/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/src/main/java/ua/kyva/NodeApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/src/main/java/ua/kyva/configuration/RabbitConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/src/main/java/ua/kyva/service/ConsumerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/src/main/java/ua/kyva/service/ProducerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/src/main/java/ua/kyva/service/impl/ConsumerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/src/main/java/ua/kyva/service/impl/ProducerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node/src/main/resources/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dispatcher/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/controller/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/controller/TelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/controller/UpdateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/controller/UpdateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/service/impl/AnswerConsumerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/service/impl/AnswerConsumerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/service/impl/UpdateProducerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dispatcher/src/main/java/ua/kyva/service/impl/UpdateProducerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +62,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "corretto-11",
+    "last_opened_file_path": "D:/sendMeFiles/sendMeFiles/node/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -67,7 +71,16 @@
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\sendMeFiles\sendMeFiles\node\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ua.kyva.configuration" />
+      <recent name="ua.kyva.confuguration" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.NodeApplication">
     <configuration name="DispatcherApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="dispatcher" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ua.kyva.DispatcherApplication" />
@@ -81,8 +94,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="NodeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="node" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ua.kyva.NodeApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.kyva.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.NodeApplication" />
         <item itemvalue="Spring Boot.DispatcherApplication" />
       </list>
     </recent_temporary>
@@ -95,7 +122,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679148826401</updated>
-      <workItem from="1679148827741" duration="8623000" />
+      <workItem from="1679148827741" duration="13772000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1679150605988</created>
@@ -111,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679154626100</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Init service + controller update">
+      <created>1679161172276</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679161172276</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +165,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init" />
     <MESSAGE value="Bot template" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bot template" />
+    <MESSAGE value="Init service + controller update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init service + controller update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
